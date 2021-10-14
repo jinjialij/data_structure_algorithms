@@ -25,9 +25,9 @@
 - [Sliding window](#sliding-window)
   - 340 Longest Substring with At Most K Distinct Characters 
   - 3 Longest Substring Without Repeating Characters
-  - 76. Minimum Window Substring
-  - 209. Minimum Size Subarray Sum
-  - 424. Longest Repeating Character Replacement 
+  - 76 Minimum Window Substring
+  - 209 Minimum Size Subarray Sum
+  - 424 The Longest Repeating Character Replacement 
          
 3. [Prefix sum](#prefix-sum)
 - 560 Subarray Sum Equals K
@@ -310,7 +310,7 @@ Input: numbers = [2,7,11,15], target = 9
      
 Output: [1,2]
      
-Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
+Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2.
 ```java
 class Solution{
      public int[] twoSum(int[] numbers, int target) {
@@ -397,7 +397,7 @@ class Solution{
      
 Explanation:
 The basic idea is that, for example, nums = [1,2,3,4,5,6,7] and k = 3, first we reverse [1,2,3,4], it becomes[4,3,2,1]; then we reverse[5,6,7], it becomes[7,6,5], finally we reverse the array as a whole, it becomes[4,3,2,1,7,6,5] ---> [5,6,7,1,2,3,4].
-Reverse is done by using two pointers, one point at the head and the other point at the tail, after switching these two, these two pointers move one position towards the middle.
+Reverse is done by using two pointers, one point at the head, and the other point at the tail, after switching these two, these two pointers move one position towards the middle.
 
 ## Slow and fast pointer
 
