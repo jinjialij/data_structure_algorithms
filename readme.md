@@ -603,7 +603,7 @@ class Solution{
 }
 ```
 
-### 3. Longest Substring Without Repeating Characters
+### 3 Longest Substring Without Repeating Characters
 > Given a string s, find the length of the longest substring without repeating characters. 
  
 Example 1: Input: s = "abcabcbb" | Output: 3
@@ -671,7 +671,7 @@ class Solution {
 }
 ```
 
-### 76. Minimum Window Substring
+### 76 Minimum Window Substring
 > Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "". A substring is a contiguous sequence of characters within the string.
 
 Example 1: Input: s = "ADOBECODEBANC", t = "ABC"      |     Output: "BANC"
@@ -759,7 +759,7 @@ Explanation:
     Remove s.charAt(left) from the window map
     Check formed: whether the window map contains all chars of string t
 
-### 209. Minimum Size Subarray Sum
+### 209 Minimum Size Subarray Sum
 > Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray [numsl, numsl+1, ..., numsr-1, numsr] of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.
 
 Example 1:
@@ -790,7 +790,7 @@ class Solution{
 }
 ```
 
-### 424. The Longest Repeating Character Replacement
+### 424 The Longest Repeating Character Replacement
 > You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.
 <br>Return the length of the longest substring containing the same letter you can get after performing the above operations.
 
@@ -830,7 +830,7 @@ class Solution{
 
 ## Prefix sum
 
-### 560. Subarray Sum Equals K
+### 560 Subarray Sum Equals K
 > Given an array of integers nums and an integer k, return the total number of continuous subarray whose sum equals to k.
 
 Example 1: Input: nums = [1,1,1], k = 2 | Output: 2
@@ -878,7 +878,7 @@ class Solution{
 
 ## LinkedList
 
-### 2. Add Two Numbers
+### 2 Add Two Numbers
    You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
    You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 ```java
@@ -932,7 +932,7 @@ class BinaryTree{
 }
 ```
 
-### 94. Binary Tree Inorder Traversal
+### 94 Binary Tree Inorder Traversal
     Input: root = [1,null,2,3]
     Output: [1,3,2]
 
@@ -973,7 +973,7 @@ class BTS{
 }
 ```
 
-### 226. Invert Binary Tree
+### 226 Invert Binary Tree
 > Given the root of a binary tree, invert the tree, and return its root.
 
 Example 1:
@@ -994,7 +994,7 @@ class Solution{
 }
 ```
 
-### 114. Flatten Binary Tree to Linked List
+### 114 Flatten Binary Tree to Linked List
 > Given the root of a binary tree, flatten the tree into a "linked list":
 <br>The "linked list" should use the same TreeNode class where the right child pointer points to the next node in the list, and the left child pointer is always null.
 <br>The "linked list" should be in the same order as a pre-order traversal of the binary tree.
@@ -1039,7 +1039,7 @@ class Solution{
 }
 ```
 
-### 116. Populating Next Right Pointers in Each Node
+### 116 Populating Next Right Pointers in Each Node
 > You are given a perfect binary tree where all leaves are on the same level, and every parent has two children. The binary tree has the following definition:
      
 ```text
@@ -1059,7 +1059,7 @@ Input: root = [1,2,3,4,5,6,7] <br>
 Output: [1,#,2,3,#,4,5,6,7,#] <br>
 Explanation: Given the above perfect binary tree (Figure A), your function should populate each next pointer to point to its next right node, just like in Figure B. The serialized output is in level order as connected by the next pointers, with '#' signifying the end of each level.
 
-### 654. Maximum Binary Tree
+### 654 Maximum Binary Tree
 ```text
 You are given an integer array nums with no duplicates. A maximum binary tree can be built recursively from nums using the following algorithm:
 1. Create a root node whose value is the maximum value in nums.
@@ -1113,7 +1113,7 @@ class Solution{
 }
 ```
 
-### 652. Find Duplicate Subtrees
+### 652 Find Duplicate Subtrees
 > Given the root of a binary tree, return all duplicate subtrees. <br>For each kind of duplicate subtrees, you only need to return the root node of any one of them.
 <br>Two trees are duplicate if they have the same structure with the same node values.
 
@@ -1241,7 +1241,7 @@ Combine them, now we have [ [ ], [1], [2], [1,2] ]
 Next considering 3, if not use it, we still have [ [ ], [1], [2], [1,2] ], if use 3, just add 3 to each previous subset, we have [ [3], [1,3], [2,3], [1,2,3] ]  
 Combine them, now we have [ [ ], [1], [2], [1,2], [3], [1,3], [2,3], [1,2,3] ]  
 
-### 90. Subsets II
+### 90 Subsets II
 > Given an integer array nums that may contain duplicates, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order.
 
 Example 1:  
