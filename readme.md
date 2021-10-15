@@ -36,7 +36,7 @@
     - 2 Add Two Numbers
 
 5. [Tree](#tree)
-    - BST
+    - [BST](#bst)
         - 94 Binary Tree Inorder Traversal
         - 226 Invert Binary Tree
         - 114 Flatten Binary Tree to Linked List
@@ -44,7 +44,7 @@
         - 654 Maximum Binary Tree
         - 652 Find Duplicate Subtrees
          
-    - DFS
+    - [DFS](#dfs)
        - 252 Meeting Room	
        - 253 Meeting room
 
