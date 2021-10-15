@@ -12,8 +12,10 @@
 2. [Two pointers](#two-pointers)
     - [Left and right](#left-and-right)
         - 125 Valid Palindrome
-        - 704 Binary Search
         - 167 Two Sum II - Input array is sorted
+        - 189 Rotate array
+        - 567 Permutation in String
+        - 704 Binary Search
     - [Slow and fast pointer](#slow-and-fast-pointer)
         - 26 Remove Duplicates from Sorted Array
         - 27 Remove Element
@@ -274,37 +276,9 @@ class Solution {
 }
 ```
 
-### 704 Binary Search
-> Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.
-
-Input: nums = [-1,0,3,5,9,12], target = 9
-
-Output: 4
-
-Explanation: 9 exists in nums and its index is 4
-
-```java
-class Solution {
-    public int search(int[] nums, int target) {
-        int left = 0, right = nums.length - 1, mid;
-        while (left <= right) {
-            mid = left + (right - left) / 2; // avoid overflow as it can be greater than int max value (231 - 1)
-            if (nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] > target) {
-                right = mid - 1;
-            } else {
-                left = mid + 1;
-            }
-        }
-        return -1;
-    }
-}
-```
-     
 ### 167 Two Sum II - Input array is sorted
-> Given an array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. 
-<br> Return the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 <= answer[0] < answer[1] <= numbers.length. 
+> Given an array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number.
+<br> Return the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 <= answer[0] < answer[1] <= numbers.length.
 <br>The tests are generated such that there is exactly one solution. You may not use the same element twice.
 
 Example 1:  
@@ -331,12 +305,12 @@ class Solution{
 ```
 
 ### 189 Rotate Array
->Given an array, rotate the array to the right by k steps, where k is non-negative. 
- 
+>Given an array, rotate the array to the right by k steps, where k is non-negative.
+
 Example 1:  
 Input: nums = [1,2,3,4,5,6,7], k = 3  
 Output: [5,6,7,1,2,3,4]  
-Explanation:  
+Explanation:
 1. rotate 1 steps to the right: [7,1,2,3,4,5,6]
 2. rotate 2 steps to the right: [6,7,1,2,3,4,5]
 3. rotate 3 steps to the right: [5,6,7,1,2,3,4]
@@ -394,12 +368,132 @@ class Solution{
     }
 }
 ```
-     
+
 Explanation:  
 The basic idea is that, for example, nums = [1,2,3,4,5,6,7] and k = 3, first we reverse [1,2,3,4], it becomes[4,3,2,1];  
 then we reverse[5,6,7], it becomes[7,6,5],   
 finally we reverse the array as a whole, it becomes[4,3,2,1,7,6,5] ---> [5,6,7,1,2,3,4].  
 Reverse is done by using two pointers, one point at the head, and the other point at the tail, after switching these two, these two pointers move one position towards the middle.
+
+### 567 Permutation in String
+> Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise. In other words, return true if one of s1's permutations is the substring of s2.
+
+Example 1:  
+Input: s1 = "ab", s2 = "eidbaooo"  
+Output: true  
+Explanation: s2 contains one permutation of s1 ("ba").
+
+#### Approach 1: using array
+```java
+class Solution{
+    public boolean checkInclusion(String s1, String s2) {
+        //loop s1 to store it in 26 character array
+        //using sliding window, check the frequency of characters
+        //if s1 matches s2 return true, otherwise false
+        if(s1.length()>s2.length())
+            return false;
+        int [] s1map = new int [26];
+        for(int i=0;i<s1.length();i++){
+            s1map[s1.charAt(i)-'a']++;
+        }
+
+        int left=0;
+        while(left+s1.length()<=s2.length()){//be aware of the boundary
+            int [] s2map = new int [26];
+
+            for(int j=left;j<s1.length()+left;j++){
+                s2map[s2.charAt(j)-'a']++;
+            }
+
+
+            //check if s1map matches s2map
+            if(matches(s1map,s2map)){
+                return true;
+            } else{
+                left++;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean matches(int [] s1map, int []s2map){
+        for(int i=0;i<s1map.length;i++){
+            if(s1map[i]!=s2map[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+
+#### Approach 2: sliding window
+```java
+class Solution{
+    public boolean checkInclusion(String s1, String s2) {
+        if(s1.length()>s2.length())
+            return false;
+        int [] s1map=new int[26];
+        int [] s2map=new int [26];
+        for(int i=0;i<s1.length();i++){
+            s1map[s1.charAt(i)-'a']++;
+            s2map[s2.charAt(i)-'a']++;
+        }
+        if(matches(s1map,s2map))
+            return true;
+        
+        //maintain window
+        int left=0,right= s1.length();
+        while(right<s2.length()){
+            s2map[s2.charAt(right++)-'a']++;//add the character of the right pointer into the array and move one step right
+            s2map[s2.charAt(left++)-'a']--;//remove the character of the left pointer from the array and move one step right
+            if(matches(s1map,s2map))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean matches(int [] s1map, int []s2map){
+        for(int i=0;i<s1map.length;i++){
+            if(s1map[i]!=s2map[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+
+### 704 Binary Search
+> Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.
+
+Input: nums = [-1,0,3,5,9,12], target = 9
+
+Output: 4
+
+Explanation: 9 exists in nums and its index is 4
+
+```java
+class Solution {
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1, mid;
+        while (left <= right) {
+            mid = left + (right - left) / 2; // avoid overflow as it can be greater than int max value (231 - 1)
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
+```
+
+---
 
 ## Slow and fast pointer
 
