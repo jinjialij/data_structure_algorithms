@@ -3,50 +3,50 @@
 ## Table of Contents
 
 1. [Recursion Linked List](#recursion-Linked-List)
-- 206 Reverse Linked List
-- 92 Reverse Linked List II
-- 25 Reverse Nodes in k-Group
-- 19 Remove Nth Node From End of List
-- 234 Palindrome Linked List 
+    - 206 Reverse Linked List
+    - 92 Reverse Linked List II
+    - 25 Reverse Nodes in k-Group
+    - 19 Remove Nth Node From End of List
+    - 234 Palindrome Linked List 
           
 2. [Two pointers](#two-pointers)
-- [Left and right](#left-and-right)
-    - 125 Valid Palindrome
-    - 704 Binary Search
-    - 167 Two Sum II - Input array is sorted
-- [Slow and fast pointer](#slow-and-fast-pointer)
-    - 26 Remove Duplicates from Sorted Array
-    - 27 Remove Element
-    - 83 Remove Duplicates from Sorted List
-    - 141 Linked List Cycle
-    - 142 Linked List Cycle II
-    - 876 Middle of the Linked List 
+    - [Left and right](#left-and-right)
+        - 125 Valid Palindrome
+        - 704 Binary Search
+        - 167 Two Sum II - Input array is sorted
+    - [Slow and fast pointer](#slow-and-fast-pointer)
+        - 26 Remove Duplicates from Sorted Array
+        - 27 Remove Element
+        - 83 Remove Duplicates from Sorted List
+        - 141 Linked List Cycle
+        - 142 Linked List Cycle II
+        - 876 Middle of the Linked List 
            
-- [Sliding window](#sliding-window)
-  - 340 Longest Substring with At Most K Distinct Characters 
-  - 3 Longest Substring Without Repeating Characters
-  - 76 Minimum Window Substring
-  - 209 Minimum Size Subarray Sum
-  - 424 The Longest Repeating Character Replacement 
+    - [Sliding window](#sliding-window)
+      - 340 Longest Substring with At Most K Distinct Characters 
+      - 3 Longest Substring Without Repeating Characters
+      - 76 Minimum Window Substring
+      - 209 Minimum Size Subarray Sum
+      - 424 The Longest Repeating Character Replacement 
          
 3. [Prefix sum](#prefix-sum)
-- 560 Subarray Sum Equals K
+    - 560 Subarray Sum Equals K
 
 4. [LinkedList](#linkedlist)
-- 2 Add Two Numbers
+    - 2 Add Two Numbers
 
 5. [Tree](#tree)
-- BST
-    - 94 Binary Tree Inorder Traversal
-    - 226 Invert Binary Tree
-    - 114 Flatten Binary Tree to Linked List
-    - 116 Populating Next Right Pointers in Each Node
-    - 654 Maximum Binary Tree
-    - 652 Find Duplicate Subtrees
-     
-- DFS
-   - 252 Meeting Room	
-   - 253 Meeting room
+    - BST
+        - 94 Binary Tree Inorder Traversal
+        - 226 Invert Binary Tree
+        - 114 Flatten Binary Tree to Linked List
+        - 116 Populating Next Right Pointers in Each Node
+        - 654 Maximum Binary Tree
+        - 652 Find Duplicate Subtrees
+         
+    - DFS
+       - 252 Meeting Room	
+       - 253 Meeting room
 
 6. Subsets
 
@@ -230,6 +230,7 @@ class Solution{
 }
 ```
      
+---
 
 ## Two pointers
 
@@ -838,6 +839,8 @@ class Solution{
 }
 ```
 
+---
+
 ## Prefix sum
 
 ### 560 Subarray Sum Equals K
@@ -919,6 +922,8 @@ class Solution {
     }
 }
 ```
+
+---
 
 ## Tree
 Traversals:  
@@ -1139,6 +1144,7 @@ Explanation:
 2. store left-right-root data as string in HashMap, store node in LinkedList
 3. the LinkedList is the result
 
+---
 
 ## DFS
 
