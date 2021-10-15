@@ -302,14 +302,13 @@ class Solution {
 ```
      
 ### 167 Two Sum II - Input array is sorted
-> Given an array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Return the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 <= answer[0] < answer[1] <= numbers.length. 
-> The tests are generated such that there is exactly one solution. You may not use the same element twice.
+> Given an array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. 
+<br> Return the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 <= answer[0] < answer[1] <= numbers.length. 
+<br>The tests are generated such that there is exactly one solution. You may not use the same element twice.
 
-Example 1:
-Input: numbers = [2,7,11,15], target = 9
-     
-Output: [1,2]
-     
+Example 1:  
+Input: numbers = [2,7,11,15], target = 9       
+Output: [1,2]       
 Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2.
 ```java
 class Solution{
@@ -333,13 +332,13 @@ class Solution{
 ### 189 Rotate Array
 >Given an array, rotate the array to the right by k steps, where k is non-negative. 
  
-Example 1:
-     Input: nums = [1,2,3,4,5,6,7], k = 3
-     Output: [5,6,7,1,2,3,4]
-     Explanation:
-     rotate 1 steps to the right: [7,1,2,3,4,5,6]
-     rotate 2 steps to the right: [6,7,1,2,3,4,5]
-     rotate 3 steps to the right: [5,6,7,1,2,3,4]
+Example 1:  
+Input: nums = [1,2,3,4,5,6,7], k = 3  
+Output: [5,6,7,1,2,3,4]  
+Explanation:  
+1. rotate 1 steps to the right: [7,1,2,3,4,5,6]
+2. rotate 2 steps to the right: [6,7,1,2,3,4,5]
+3. rotate 3 steps to the right: [5,6,7,1,2,3,4]
 
 ```java
 class Solution{
@@ -395,17 +394,21 @@ class Solution{
 }
 ```
      
-Explanation:
-The basic idea is that, for example, nums = [1,2,3,4,5,6,7] and k = 3, first we reverse [1,2,3,4], it becomes[4,3,2,1]; then we reverse[5,6,7], it becomes[7,6,5], finally we reverse the array as a whole, it becomes[4,3,2,1,7,6,5] ---> [5,6,7,1,2,3,4].
+Explanation:  
+The basic idea is that, for example, nums = [1,2,3,4,5,6,7] and k = 3, first we reverse [1,2,3,4], it becomes[4,3,2,1];  
+then we reverse[5,6,7], it becomes[7,6,5],   
+finally we reverse the array as a whole, it becomes[4,3,2,1,7,6,5] ---> [5,6,7,1,2,3,4].  
 Reverse is done by using two pointers, one point at the head, and the other point at the tail, after switching these two, these two pointers move one position towards the middle.
 
 ## Slow and fast pointer
 
 ### 26 Remove Duplicates from Sorted Array
     
-Example 1: Input: nums = [1,1,2]    |    Output: 2, nums = [1,2,_] 
-Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively. 
-It does not matter what you leave beyond the returned k (hence they are underscores). 
+Example 1:  
+Input: nums = [1,1,2]  
+Output: 2, nums = [1,2,_]  
+Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.  
+It does not matter what you leave beyond the returned k (hence they are underscores).  
 Loop the array, use two pointer
 - If nums[left]==nums[right], skip it
 - If nums[left]!=nums[right], nums[left]=nums[right], left++, right++
@@ -430,11 +433,10 @@ class Solution{
 <br>Return k after placing the final result in the first k slots of nums.
 <br>Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
     
-Example 1:
-    Input: nums = [3,2,2,3], val = 3
-    Output: 2, nums = [2,2,_,_]
-    Explanation: Your function should return k = 2, with the first two elements of nums being 2.
-    It does not matter what you leave beyond the returned k (hence they are underscores).
+Example 1:  
+Input: nums = [3,2,2,3], val = 3  
+Output: 2, nums = [2,2,_,_]  
+Explanation: Your function should return k = 2, with the first two elements of nums being 2.It does not matter what you leave beyond the returned k (hence they are underscores).
 
 ```java
 class Solution{
@@ -480,7 +482,9 @@ class Solution{
 ### 141. Linked List Cycle
 > Given head, the head of a linked list, determines if the linked list has a cycle in it.
 
-There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer.   
+Internally, pos is used to denote the index of the node that tail's next pointer is connected to.  
+Note that pos is not passed as a parameter.  
 Return true if there is a cycle in the linked list. Otherwise, return false.
 ```java
 class Solution{
@@ -499,7 +503,8 @@ class Solution{
 ```
 
 ### 142. Linked List Cycle II
-> Given a linked list, return the node where the cycle begins. If there is no cycle, return null. <br>There is a cycle in a linked list if some nodes in the list can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+> Given a linked list, return the node where the cycle begins. If there is no cycle, return null. <br>There is a cycle in a linked list if some nodes in the list can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. 
+<br> Note that pos is not passed as a parameter.
 <br>Notice that you should not modify the linked list.
 ```java
 class Solution{
@@ -529,10 +534,10 @@ class Solution{
 ### 876. Middle of the Linked List
 > Given the head of a singly linked list, return the middle node of the linked list.      If there are two middle nodes, return the second middle node.
 
-Example 1:
-     Input: head = [1,2,3,4,5]
-     Output: [3,4,5]
-     Explanation: The middle node of the list is node 3.
+Example 1:  
+Input: head = [1,2,3,4,5]  
+Output: [3,4,5]  
+Explanation: The middle node of the list is node 3.
 ```java
 class Solution{
      public ListNode middleNode(ListNode head) {
@@ -549,8 +554,9 @@ class Solution{
 ### 19. Remove Nth Node From End of List
 > Given the head of a linked list, remove the nth node from the end of the list and return its head.
 
-Example 1:
-    Input: head = [1,2,3,4,5], n = 2 | Output: [1,2,3,5]
+Example 1:  
+Input: head = [1,2,3,4,5], n = 2  
+Output: [1,2,3,5]
 
 ```java
 class Solution{    
@@ -576,7 +582,9 @@ class Solution{
 ### 340 Longest Substring with At Most K Distinct Characters
 > Given a string find the length of the longest substring T that contains at most k distinct characters
 
-Example: s= eceba k=2 |  Output: T=ece , length is 3
+Example:  
+Input: s= eceba k=2  
+Output: T=ece , length is 3  
 Leetcode 159 is similiar
 
 ```java
@@ -606,8 +614,10 @@ class Solution{
 ### 3 Longest Substring Without Repeating Characters
 > Given a string s, find the length of the longest substring without repeating characters. 
  
-Example 1: Input: s = "abcabcbb" | Output: 3
-<br>Explanation: The answer is "abc", with the length of 3.
+Example 1:  
+Input: s = "abcabcbb"  
+Output: 3  
+Explanation: The answer is "abc", with the length of 3.
 ```java
 class Solution {
     public int lengthOfLongestSubstring(String s) {
@@ -674,7 +684,9 @@ class Solution {
 ### 76 Minimum Window Substring
 > Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "". A substring is a contiguous sequence of characters within the string.
 
-Example 1: Input: s = "ADOBECODEBANC", t = "ABC"      |     Output: "BANC"
+Example 1:  
+Input: s = "ADOBECODEBANC", t = "ABC"  
+Output: "BANC"
 
 ```java
 class Solution{
@@ -745,27 +757,25 @@ class Solution{
 }
 ```
 
-Explanation:
-    Store chars of t into a hashmap
-    Create a hashmap to track the sliding window which stores characters in the window
-    Use formed to record if the window contains all characters of string t
-    Use an array to store window size(i-l+1) and start and end index of the window
-    Loop the string s while(r<s.length)
-    Put every char into the window
-    Update formed when windowMap.get(char).intValue()==tMap.get(char).intValue() && tMap.containsKey(char)
-    While the window contains all chars of t, moving left pointer until the window no longer contains all
-    while(l<=r && formed == tMap.size())
-    Update left and res array
-    Remove s.charAt(left) from the window map
-    Check formed: whether the window map contains all chars of string t
+Explanation:  
+1. Store chars of t into a hashmap  
+2. Create a hashmap to track the sliding window which stores characters in the window  
+3. Use formed to record if the window contains all characters of string t  
+4. Use an array to store window size(i-l+1) and start and end index of the window  
+5. Loop the string s while(r<s.length)  
+6. Put every char into the window  
+7. Update formed when windowMap.get(char).intValue()==tMap.get(char).intValue() && tMap.containsKey(char)  
+8. While the window contains all chars of t, moving left pointer until the window no longer contains all
+9. While(l<=r && formed == tMap.size()), update the left and the res array, remove s.charAt(left) from the window map  
+10. Check formed: whether the window map contains all chars of string t  
 
 ### 209 Minimum Size Subarray Sum
 > Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray [numsl, numsl+1, ..., numsr-1, numsr] of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.
 
-Example 1:
-    <br>Input: target = 7, nums = [2,3,1,2,4,3]
-    <br>Output: 2
-    <br>Explanation: 
+Example 1:  
+Input: target = 7, nums = [2,3,1,2,4,3]  
+Output: 2  
+Explanation: 
 - The subarray [4,3] has the minimal length under the problem constraint. 
 - Loop the array using two pointer
 - Move right pointer and calculate sum
@@ -794,10 +804,10 @@ class Solution{
 > You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.
 <br>Return the length of the longest substring containing the same letter you can get after performing the above operations.
 
-Example 1:
-     Input: s = "ABAB", k = 2<br>
-     Output: 4<br>
-     Explanation: Replace the two 'A's with two 'B's or vice versa.
+Example 1:  
+Input: s = "ABAB", k = 2  
+Output: 4  
+Explanation: Replace the two 'A's with two 'B's or vice versa.
 ```java
 class Solution{
      public int characterReplacement(String s, int k) {
@@ -833,9 +843,12 @@ class Solution{
 ### 560 Subarray Sum Equals K
 > Given an array of integers nums and an integer k, return the total number of continuous subarray whose sum equals to k.
 
-Example 1: Input: nums = [1,1,1], k = 2 | Output: 2
-     Use an array to store prefix sum, so the sum of the subarray is sum[j]-sum[i]
-     Use two for loop to check if sum[j]-sum[i]==k
+Example 1:  
+Input: nums = [1,1,1], k = 2  
+Output: 2
+Explanation
+- Use an array to store prefix sum, so the sum of the subarray is sum[j]-sum[i]
+- Use two for loop to check if sum[j]-sum[i]==k
 
 ```java
 class Solution{
@@ -879,8 +892,9 @@ class Solution{
 ## LinkedList
 
 ### 2 Add Two Numbers
-   You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-   You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+> You are given two non-empty linked lists representing two non-negative integers. 
+<br>The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 ```java
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -933,8 +947,9 @@ class BinaryTree{
 ```
 
 ### 94 Binary Tree Inorder Traversal
-    Input: root = [1,null,2,3]
-    Output: [1,3,2]
+Example:  
+Input: root = [1,null,2,3]  
+Output: [1,3,2]
 
 ```java
 class BTS{
@@ -977,9 +992,8 @@ class BTS{
 > Given the root of a binary tree, invert the tree, and return its root.
 
 Example 1:
-
-Input: root = [4,2,7,1,3,6,9]
-Output: [4,7,2,9,6,3,1]
+Input: root = [4,2,7,1,3,6,9]  
+Output: [4,7,2,9,6,3,1]  
 ```java
 class Solution{
     public TreeNode invertTree(TreeNode root) {
@@ -999,10 +1013,9 @@ class Solution{
 <br>The "linked list" should use the same TreeNode class where the right child pointer points to the next node in the list, and the left child pointer is always null.
 <br>The "linked list" should be in the same order as a pre-order traversal of the binary tree.
 
-Example 1:
-
-Input: root = [1,2,5,3,4,null,6]
-Output: [1,null,2,null,3,null,4,null,5,null,6]
+Example 1:  
+Input: root = [1,2,5,3,4,null,6]  
+Output: [1,null,2,null,3,null,4,null,5,null,6]  
 
 ```java
 class Solution{
@@ -1053,11 +1066,11 @@ struct Node {
 Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.
 Initially, all next pointers are set to NULL.
 
-Example 1:
-
-Input: root = [1,2,3,4,5,6,7] <br>
-Output: [1,#,2,3,#,4,5,6,7,#] <br>
-Explanation: Given the above perfect binary tree (Figure A), your function should populate each next pointer to point to its next right node, just like in Figure B. The serialized output is in level order as connected by the next pointers, with '#' signifying the end of each level.
+Example 1:  
+Input: root = [1,2,3,4,5,6,7]  
+Output: [1,#,2,3,#,4,5,6,7,#]  
+Explanation:   
+Given the above perfect binary tree (Figure A), your function should populate each next pointer to point to its next right node, just like in Figure B. The serialized output is in level order as connected by the next pointers, with '#' signifying the end of each level.
 
 ### 654 Maximum Binary Tree
 ```text
@@ -1068,10 +1081,11 @@ You are given an integer array nums with no duplicates. A maximum binary tree ca
 4. Return the maximum binary tree built from nums.
 ```
 
-Example 1:
-     Input: nums = [3,2,1,6,0,5] <br>
-     Output: [6,3,5,null,2,0,null,null,1] <br>
-     Explanation: The recursive calls are as follows: <br>
+Example 1:  
+Input: nums = [3,2,1,6,0,5]  
+Output: [6,3,5,null,2,0,null,null,1]  
+Explanation:  
+The recursive calls are as follows:  
 - The largest value in [3,2,1,6,0,5] is 6. Left prefix is [3,2,1] and right suffix is [0,5].
     - The largest value in [3,2,1] is 3. Left prefix is [] and right suffix is [2,1].
         - Empty array, so no child.
@@ -1117,10 +1131,13 @@ class Solution{
 > Given the root of a binary tree, return all duplicate subtrees. <br>For each kind of duplicate subtrees, you only need to return the root node of any one of them.
 <br>Two trees are duplicate if they have the same structure with the same node values.
 
-Example 1: Input: root = [1,2,3,4,null,2,4,null,null,4]       |    Output: [[2,4],[4]]
-     //traverse the tree
-     //store left-right-root data as string in HashMap, store node in LinkedList
-     //the LinkedList is the result
+Example 1:  
+Input: root = [1,2,3,4,null,2,4,null,null,4]  
+Output: [[2,4],[4]]  
+Explanation:  
+1. traverse the tree
+2. store left-right-root data as string in HashMap, store node in LinkedList
+3. the LinkedList is the result
 
 
 ## DFS
@@ -1128,7 +1145,9 @@ Example 1: Input: root = [1,2,3,4,null,2,4,null,null,4]       |    Output: [[2,4
 ### 252 Meeting Room
 > Given an array of meeting time intervals, consisting of start and end time, determine if a person could attend all meetings.
 
-Example 1: Input [[0,30],[5,10],[15,20]]     output false
+Example 1:  
+Input [[0,30],[5,10],[15,20]]  
+output false
 ```java
 class Solution{
     public boolean canAttendMeeting(Interval[] intervals){
@@ -1146,7 +1165,9 @@ class Solution{
 ### 253 Meeting room II
 > Given an array of meeting time intervals, consisting of start and end time, find the minimum number of conference rooms required.
 
-Example 1: Input [[0,30],[5,10],[15,20]]  output: 2
+Example 1:  
+Input [[0,30],[5,10],[15,20]]  
+output: 2
 ```java
 class Solution{
     public int miniMeetingRooms(int[][] intervals){
@@ -1171,8 +1192,9 @@ class Solution{
 ### 78. Subsets
 > Given an integer array nums of unique elements, return all possible subsets (the power set). <br>The solution set must not contain duplicate subsets. Return the solution in any order.
 
-Example 1: Input: nums = [1,2,3] |
-    Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+Example 1:  
+Input: nums = [1,2,3]  
+Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 ```java
 class Solution{
     public List<List<Integer>> subsets(int[] nums) {
