@@ -465,7 +465,48 @@ class Solution{
 }
 ```
 
+### Approach 3: optimized sliding window
+
+Keep a track of the number of elements which were already matching in the earlier hashmap and update just the count of matching elements when we shift the window towards the right.
+```java
+class solution{
+    public static boolean checkInclusion(String s1, String s2) {
+        if (s1.length() > s2.length())
+            return false;
+        int[] s1map = new int[26];
+        int[] s2map = new int[26];
+        for (int i = 0; i < s1.length(); i++) {//the window size is s1.length()
+            s1map[s1.charAt(i) - 'a']++;
+            s2map[s2.charAt(i) - 'a']++;
+        }
+
+        int count = 0;
+        for (int i = 0; i < 26; i++)
+            if (s1map[i] == s2map[i])
+                count++;
+
+        for (int i = 0; i < s2.length() - s1.length(); i++) {//only need to compare s2.length() - s1.length() times
+            int r = s2.charAt(i + s1.length()) - 'a', l = s2.charAt(i) - 'a';
+            if (count == 26)
+                return true;
+            s2map[r]++;//add the right element
+            if (s2map[r] == s1map[r])
+                count++;
+            else if (s2map[r] == s1map[r] + 1)//doesn't match, thus, count--
+                count--;
+            s2map[l]--;//remove the left element
+            if (s2map[l] == s1map[l])//when match, count++
+                count++;
+            else if (s2map[l] == s1map[l] - 1)//doesn't match, thus, count--
+                count--;
+        }
+        return count == 26;
+    }
+}
+```
+
 ### 704 Binary Search
+
 > Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.
 
 Input: nums = [-1,0,3,5,9,12], target = 9
